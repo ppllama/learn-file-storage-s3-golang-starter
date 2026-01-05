@@ -21,6 +21,13 @@ func (cfg *apiConfig) handlerThumbnailGet(w http.ResponseWriter, r *http.Request
 		return
 	}
 
+	// video, err := cfg.db.GetVideo(videoID)
+	// if err != nil {
+	// 	respondWithError(w, http.StatusInternalServerError, "Error getting video metadata", err)
+	// 	return
+	// }
+	// tn := video.ThumbnailURL
+
 	w.Header().Set("Content-Type", tn.mediaType)
 	w.Header().Set("Content-Length", fmt.Sprintf("%d", len(tn.data)))
 
